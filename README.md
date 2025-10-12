@@ -1,73 +1,95 @@
-# Welcome to your Lovable project
+# Harvest Hub
 
-## Project info
+Harvest Hub is a smart crop recommendation application designed to help farmers make informed decisions about crop selection based on their soil type and seasonal conditions. The application provides personalized crop recommendations with detailed information about growth time, yield potential, and soil compatibility.
 
-**URL**: https://lovable.dev/projects/318228dd-bb57-4bfd-b746-8a3322252962
+## Features
 
-## How can I edit this code?
+- **Smart Crop Recommendations**: Get personalized crop suggestions based on soil type and season
+- **Comprehensive Crop Database**: Access information about 120+ different crops including cereals, vegetables, fruits, legumes, nuts, and spices
+- **Soil Type Analysis**: Recommendations tailored for different soil types (Sandy, Loamy, Clay, Silty)
+- **Seasonal Guidance**: Optimized suggestions for Spring, Summer, Fall, and Winter seasons
+- **Detailed Crop Information**: Each crop includes growth time, yield potential, and suitable soil types
+- **Responsive Design**: Works seamlessly on desktop and mobile devices
 
-There are several ways of editing your application.
+## Getting Started
 
-**Use Lovable**
+### Prerequisites
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/318228dd-bb57-4bfd-b746-8a3322252962) and start prompting.
+- Node.js (version 18 or higher)
+- npm or yarn package manager
 
-Changes made via Lovable will be committed automatically to this repo.
+### Installation
 
-**Use your preferred IDE**
+1. Clone the repository:
+   ```sh
+   git clone <YOUR_GIT_URL>
+   cd harvest-hub-dt
+   ```
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+2. Install dependencies:
+   ```sh
+   npm install
+   ```
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+3. Start the development server:
+   ```sh
+   npm run dev
+   ```
 
-Follow these steps:
+4. Open your browser and navigate to `http://localhost:4201`
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+The application will automatically reload when you make changes to the code.
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+## How to Use
 
-# Step 3: Install the necessary dependencies.
-npm i
+1. **Select Soil Type**: Choose from Sandy, Loamy, Clay, or Silty soil options
+2. **Choose Season**: Select the appropriate season (Spring, Summer, Fall, Winter)
+3. **Get Recommendations**: Click "Get Recommendations" to view personalized crop suggestions
+4. **Explore Crops**: Browse through the recommended crops with detailed information about each one
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+## Technologies Used
+
+- **Vite** - Fast build tool and development server
+- **TypeScript** - Type-safe JavaScript for better development experience
+- **React** - Modern UI library for building interactive interfaces
+- **shadcn/ui** - High-quality component library built on Radix UI
+- **Tailwind CSS** - Utility-first CSS framework for rapid styling
+- **Lucide React** - Beautiful icon library
+
+## Available Scripts
+
+- `npm run dev` - Start the development server
+- `npm run build` - Build the application for production
+- `npm run build:dev` - Build the application in development mode
+- `npm run preview` - Preview the production build locally
+- `npm run lint` - Run ESLint to check code quality
+
+## Project Structure
+
+```
+harvest-hub-dt/
+├── src/
+│   ├── components/     # React components
+│   │   ├── Hero.tsx           # Main landing section with soil/season selection
+│   │   ├── CropRecommendations.tsx  # Crop recommendation display
+│   │   ├── Features.tsx       # Feature highlights
+│   │   ├── Community.tsx      # Community section
+│   │   └── Footer.tsx         # Footer component
+│   ├── pages/          # Page components
+│   │   └── Index.tsx          # Main page
+│   └── assets/         # Static assets
+├── public/             # Public assets
+└── package.json       # Project dependencies and scripts
 ```
 
-**Edit a file directly in GitHub**
+## Contributing
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-**Use GitHub Codespaces**
+## License
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/318228dd-bb57-4bfd-b746-8a3322252962) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+This project is licensed under the MIT License - see the LICENSE file for details.

@@ -11,12 +11,17 @@ import {
 import { Card } from "@/components/ui/card";
 import heroImage from "@/assets/hero-farm.jpg";
 
-export const Hero = () => {
+interface HeroProps {
+  onRecommendationsUpdate?: (soilType: string, season: string) => void;
+}
+
+export const Hero = ({ onRecommendationsUpdate }: HeroProps) => {
   const [soilType, setSoilType] = useState("");
   const [season, setSeason] = useState("");
 
   const handleGetRecommendations = () => {
     if (soilType && season) {
+      onRecommendationsUpdate?.(soilType, season);
       document.getElementById("recommendations")?.scrollIntoView({ behavior: "smooth" });
     }
   };
