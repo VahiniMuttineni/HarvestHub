@@ -4,6 +4,14 @@ import reactHooks from "eslint-plugin-react-hooks";
 import reactRefresh from "eslint-plugin-react-refresh";
 import tseslint from "typescript-eslint";
 
+/**
+ * ESLint configuration for the project.
+ * - Ignores the "dist" directory.
+ * - Applies recommended JS and TypeScript ESLint configs to all .ts and .tsx files.
+ * - Sets ECMAScript version to 2020 and browser globals.
+ * - Includes plugins for React Hooks and React Refresh.
+ * - Enforces recommended React Hooks rules and customizes React Refresh and TypeScript rules.
+ */
 export default tseslint.config(
   { ignores: ["dist"] },
   {

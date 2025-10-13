@@ -1,4 +1,5 @@
 {
+  // The "compilerOptions" section specifies TypeScript compiler settings for this project.
   "compilerOptions": {
     "target": "ES2022",
     "lib": ["ES2023"],

@@ -1,5 +1,6 @@
 import type { Config } from "tailwindcss";
 
+// Tailwind CSS configuration for Harvest Hub
 export default {
   darkMode: ["class"],
   content: ["./pages/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./app/**/*.{ts,tsx}", "./src/**/*.{ts,tsx}"],
