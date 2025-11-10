@@ -7,17 +7,23 @@ import { Footer } from "@/components/Footer";
 
 const Index = () => {
   const [selectedSoilType, setSelectedSoilType] = useState<string>("");
+  const [selectedLocation, setSelectedLocation] = useState<string>("");
   const [selectedSeason, setSelectedSeason] = useState<string>("");
 
-  const handleRecommendationsUpdate = (soilType: string, season: string) => {
+  const handleRecommendationsUpdate = (soilType: string, location: string, season: string) => {
     setSelectedSoilType(soilType);
+    setSelectedLocation(location);
     setSelectedSeason(season);
   };
 
   return (
     <div className="min-h-screen bg-background">
       <Hero onRecommendationsUpdate={handleRecommendationsUpdate} />
-      <CropRecommendations soilType={selectedSoilType} season={selectedSeason} />
+      <CropRecommendations
+        soilType={selectedSoilType}
+        location={selectedLocation}
+        season={selectedSeason}
+      />
       <Features />
       <Community />
       <Footer />

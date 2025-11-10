@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Sprout, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import {
   Select,
   SelectContent,
@@ -12,16 +13,17 @@ import { Card } from "@/components/ui/card";
 import heroImage from "@/assets/hero-farm.jpg";
 
 interface HeroProps {
-  onRecommendationsUpdate?: (soilType: string, season: string) => void;
+  onRecommendationsUpdate?: (soilType: string, location: string, season: string) => void;
 }
 
 export const Hero = ({ onRecommendationsUpdate }: HeroProps) => {
   const [soilType, setSoilType] = useState("");
+  const [location, setLocation] = useState("");
   const [season, setSeason] = useState("");
 
   const handleGetRecommendations = () => {
     if (soilType && season) {
-      onRecommendationsUpdate?.(soilType, season);
+      onRecommendationsUpdate?.(soilType, location, season);
       document.getElementById("recommendations")?.scrollIntoView({ behavior: "smooth" });
     }
   };
@@ -56,12 +58,12 @@ export const Hero = ({ onRecommendationsUpdate }: HeroProps) => {
           </p>
 
           {/* Recommendation Form */}
-          <Card className="max-w-2xl mx-auto p-8 bg-card/95 backdrop-blur-sm shadow-2xl animate-grow">
+          <Card className="max-w-4xl mx-auto p-8 bg-card/95 backdrop-blur-sm shadow-2xl animate-grow">
             <h2 className="text-2xl font-semibold mb-6 text-foreground">
               Find Your Perfect Crop
             </h2>
-            
-            <div className="grid md:grid-cols-2 gap-4 mb-6">
+
+            <div className="grid md:grid-cols-3 gap-4 mb-6">
               <div className="space-y-2 text-left">
                 <label className="text-sm font-medium text-foreground">
                   Soil Type
@@ -83,6 +85,21 @@ export const Hero = ({ onRecommendationsUpdate }: HeroProps) => {
 
               <div className="space-y-2 text-left">
                 <label className="text-sm font-medium text-foreground">
+                  Location
+                </label>
+                <Select value={location} onValueChange={setLocation}>
+                  <SelectTrigger className="w-full">
+                    <SelectValue placeholder="Select location" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="andhra-pradesh">Andhra Pradesh</SelectItem>
+                    <SelectItem value="telangana">Telangana</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+
+              <div className="space-y-2 text-left">
+                <label className="text-sm font-medium text-foreground">
                   Season
                 </label>
                 <Select value={season} onValueChange={setSeason}>
@@ -90,10 +107,9 @@ export const Hero = ({ onRecommendationsUpdate }: HeroProps) => {
                     <SelectValue placeholder="Select season" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="spring">Spring</SelectItem>
-                    <SelectItem value="summer">Summer</SelectItem>
-                    <SelectItem value="fall">Fall / Autumn</SelectItem>
-                    <SelectItem value="winter">Winter</SelectItem>
+                    <SelectItem value="kharif">Kharif (Monsoon)</SelectItem>
+                    <SelectItem value="rabi">Rabi (Winter)</SelectItem>
+                    <SelectItem value="zaid">Zaid (Summer)</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
